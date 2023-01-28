@@ -6,6 +6,8 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
+  chat: python3 quickstart.py
+    uses: 'https://chat.googleapis.com/v1/spaces/AAAAcvkG2xI/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=IYegoiqxTz8zaqt9qkM1AjltnFZOeAnHO0bessuSMFM%3D'
   sonarcloud:
     name: SonarCloud
     runs-on: ubuntu-latest
@@ -18,4 +20,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-  chat: python3 quickstart.py
+
